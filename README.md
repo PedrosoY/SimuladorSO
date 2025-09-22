@@ -2,10 +2,11 @@
 
 Este projeto foi implementado em C# 9 e tem como objetivo simular, de forma controlada e educativa, o comportamento de um sistema operacional: criação e finalização de processos, criação de threads internas aos processos, alocação de memória, escalonamento, alocação de recursos (I/O), timeouts para bloqueios e cálculo de métricas didáticas.
 
-Importante sobre distribuição:
-- Na raiz do repositório esta disponibilizado duas pastas:
-  - "build": contém apenas o executável pré-compilado (MiniSOVisual.exe). Quem não quiser compilar pode simplesmente dar dois cliques nesse .exe no Windows para rodar o simulador.
-  - "project": contém todo o código-fonte em C# 9 usado na implementação.
+Importante sobre distribuição
+- O repositório contém apenas os arquivos-fonte `.cs` crus
+  - Se você quiser compilar a partir do código abra o projeto pelo arquivo `MiniSOVisual.sln` ou pegue os arquivos `.cs`, crie um projeto Windows Forms no Visual Studio, adicione os arquivos ao projeto e ajuste o `namespace`/o `designer` onde necessário (o `FormPrincipal` precisa estar corretamente conectado ao arquivo `.Designer.cs`). Em outras palavras: é necessário montar o formulário no Visual Studio para rodar a partir do código-fonte.
+  - Se você só quer ver o resultado final, baixe a release — mais especificamente o arquivo `MiniSOVisual.exe` (publicado nas Releases). Basta baixar e executar o `MiniSOVisual.exe` com dois cliques no Windows para abrir o simulador.
+- Observação sobre alertas de segurança: em alguns sistemas o Windows pode exibir um aviso (SmartScreen/Defender) ao executar um `.exe` baixado da internet. Isso pode ocorrer como falso positivo; o executável aqui é o meu build do projeto. Caso apareça esse aviso, você pode prosseguir e continuar a execução.
 
 A seguir explico detalhadamente como o simulador funciona, descrevendo cada parte / classe e o fluxo de execução de como foi projetado.
 
